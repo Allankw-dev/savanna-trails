@@ -2,6 +2,15 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const parkNames = {mara:'Maasai Mara', amboseli:'Amboseli', nakuru:'Lake Nakuru', samburu:'Samburu'};
 
+// hero video background (skipped if the person prefers reduced motion)
+const hero = $('.hero'), vid = $('.hero-video');
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  vid.remove();
+} else {
+  vid.addEventListener('loadeddata', () => hero.classList.add('has-video'));
+  vid.play().catch(() => {});
+}
+
 // mobile menu
 const menu = $('#menu'), toggle = $('#menu-toggle');
 toggle.addEventListener('click', () => {
