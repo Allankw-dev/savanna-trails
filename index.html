@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Savanna Trails | Kenya Wildlife Safaris</title>
+<meta name="description" content="Guided game drives, park stays and migration trips across Kenya's best reserves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="logo" href="#top">Savanna Trails</a>
+    <div class="menu" id="menu">
+      <a href="#parks">Parks</a><a href="#wildlife">Wildlife</a><a href="#tours">Tours</a><a href="#when">Best time</a><a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-orange" href="#tours">Book a safari</a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  </nav>
+  <div class="wrap hero-copy">
+    <p class="eyebrow">Kenya wildlife safaris</p>
+    <h1>Sunrise belongs to the wild.</h1>
+    <p class="lead">Guided game drives, park stays and migration trips across Kenya's best reserves, planned around when the animals are there.</p>
+  </div>
+</header>
+
+<div class="ground">
+  <div class="wrap planner">
+    <form id="planner" aria-label="Plan your safari">
+      <label>Destination
+        <select id="p-park" name="park">
+          <option value="mara">Maasai Mara</option>
+          <option value="amboseli">Amboseli</option>
+          <option value="nakuru">Lake Nakuru</option>
+          <option value="samburu">Samburu</option>
+        </select>
+      </label>
+      <label>Travel date <input type="date" id="p-date" name="date"></label>
+      <label>Guests <input type="number" id="p-guests" name="guests" min="1" max="20" value="2"></label>
+      <button class="btn btn-dark" type="submit" style="height:48px;padding:0 24px">Plan my safari</button>
+    </form>
+  </div>
+</div>
+
+<main>
+  <section class="section wrap" id="parks">
+    <p class="kicker">Destinations</p>
+    <h2 class="h2">Four parks, four kinds of wild</h2>
+    <p class="intro">Each park has its own animals, landscape and best season. Pick one to see its tours.</p>
+    <div class="grid parks">
+      <a class="park" href="#tours" data-park="mara">
+        <div class="photo" style="background:linear-gradient(160deg,#C98A3C,#7A4A1F)">[Photo: Maasai Mara plains]</div>
+        <div class="body"><h3>Maasai Mara</h3><p>Big cats and the Great Migration river crossings.</p><p class="meta">Migration: Jul to Oct</p></div>
+      </a>
+      <a class="park" href="#tours" data-park="amboseli">
+        <div class="photo" style="background:linear-gradient(160deg,#8DA3B8,#41566B)">[Photo: Amboseli elephants]</div>
+        <div class="body"><h3>Amboseli</h3><p>Elephant herds under the slopes of Kilimanjaro.</p><p class="meta">Dry season: Jun to Oct</p></div>
+      </a>
+      <a class="park" href="#tours" data-park="nakuru">
+        <div class="photo" style="background:linear-gradient(160deg,#E39BA8,#9C4A63)">[Photo: Lake Nakuru flamingos]</div>
+        <div class="body"><h3>Lake Nakuru</h3><p>Flamingos, rhinos and Rift Valley views.</p><p class="meta">Good for day trips</p></div>
+      </a>
+      <a class="park" href="#tours" data-park="samburu">
+        <div class="photo" style="background:linear-gradient(160deg,#C8693A,#6B2B1A)">[Photo: Samburu landscape]</div>
+        <div class="body"><h3>Samburu</h3><p>Northern species like Grevy's zebra and reticulated giraffe.</p><p class="meta">Explore the north</p></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="wildlife" id="wildlife">
+    <div class="wrap">
+      <p class="kicker">Wildlife guide</p>
+      <h2 class="h2" style="max-width:640px;margin-bottom:40px">Know who you might meet</h2>
+      <div class="grid animals">
+        <article class="animal"><div class="dot" style="background:#D9A441"></div><p class="tag">Big Five</p><h3>Lion</h3><p class="where">Spot them: Maasai Mara, Samburu</p></article>
+        <article class="animal"><div class="dot" style="background:#8DA3B8"></div><p class="tag">Big Five</p><h3>Elephant</h3><p class="where">Spot them: Amboseli, Tsavo</p></article>
+        <article class="animal"><div class="dot" style="background:#E2701F"></div><p class="tag">Fast cats</p><h3>Cheetah</h3><p class="where">Spot them: Maasai Mara plains</p></article>
+        <article class="animal"><div class="dot" style="background:#E39BA8"></div><p class="tag">Birds</p><h3>Flamingo</h3><p class="where">Spot them: Lake Nakuru</p></article>
+      </div>
+      <a class="more" href="#">Browse the full wildlife guide</a>
+    </div>
+  </section>
+
+  <section class="section wrap" id="tours">
+    <p class="kicker">Tours and packages</p>
+    <h2 class="h2" style="margin-bottom:24px">Pick your safari</h2>
+    <div class="chips" role="group" aria-label="Filter tours">
+      <button class="chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" data-filter="day" aria-pressed="false">Day trips</button>
+      <button class="chip" data-filter="multi" aria-pressed="false">Multi-day</button>
+      <button class="chip" data-filter="budget" aria-pressed="false">Budget</button>
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+    <div class="grid tours">
+      <article class="tour" data-park="mara" data-type="multi" data-budget="no">
+        <p class="when">4 days in Maasai Mara</p><h3>Migration Safari</h3>
+        <p class="desc">Game drives at dawn and dusk, with a river crossing watch.</p>
+        <p class="price">From [KES PRICE] per person</p>
+        <button class="btn btn-orange book" data-tour="Migration Safari">Book this tour</button>
+      </article>
+      <article class="tour" data-park="amboseli" data-type="multi" data-budget="yes">
+        <p class="when">2 days in Amboseli</p><h3>Elephants and Kilimanjaro</h3>
+        <p class="desc">A weekend of elephant herds with mountain views at sunrise.</p>
+        <p class="price">From [KES PRICE] per person</p>
+        <button class="btn btn-orange book" data-tour="Elephants and Kilimanjaro">Book this tour</button>
+      </article>
+      <article class="tour" data-park="nakuru" data-type="day" data-budget="yes">
+        <p class="when">1 day in Lake Nakuru</p><h3>Rift Valley Day Trip</h3>
+        <p class="desc">Flamingos, rhinos and a lakeside picnic, back by evening.</p>
+        <p class="price">From [KES PRICE] per person</p>
+        <button class="btn btn-orange book" data-tour="Rift Valley Day Trip">Book this tour</button>
+      </article>
+    </div>
+    <div class="empty" id="empty" hidden>
+      <p style="margin:0 0 12px"><strong>No tours match those filters yet.</strong></p>
+      <p style="margin:0 0 16px">Try another filter, or tell us what you want and we'll plan it.</p>
+      <a class="btn btn-dark" href="#contact">Send an enquiry</a>
+    </div>
+  </section>
+
+  <section class="section wrap" id="when">
+    <p class="kicker">Best time to visit</p>
+    <h2 class="h2" style="margin-bottom:32px">When to go</h2>
+    <div class="cal-scroll" tabindex="0" role="region" aria-label="Seasons by month">
+      <div class="cal">
+        <span></span>
+        <span class="m">Jan</span><span class="m">Feb</span><span class="m">Mar</span><span class="m">Apr</span><span class="m">May</span><span class="m">Jun</span>
+        <span class="m">Jul</span><span class="m">Aug</span><span class="m">Sep</span><span class="m">Oct</span><span class="m">Nov</span><span class="m">Dec</span>
+        <span class="row">Great Migration</span>
+        <span class="bar" style="grid-column:span 6"></span><span class="bar mig" style="grid-column:span 4" title="July to October"></span><span class="bar" style="grid-column:span 2"></span>
+        <span class="row">Dry season</span>
+        <span class="bar dry" style="grid-column:span 2" title="January to February"></span><span class="bar" style="grid-column:span 3"></span><span class="bar dry" style="grid-column:span 5" title="June to October"></span><span class="bar" style="grid-column:span 2"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta wrap" id="contact">
+    <div class="cta-box">
+      <div><h2>Not sure where to start?</h2><p>Tell us your dates and budget and we'll plan the route for you.</p></div>
+      <div class="cta-actions">
+        <a class="btn btn-dark" href="https://wa.me/254000000000">Chat on WhatsApp</a>
+        <a class="btn btn-outline" href="mailto:email@example.com">Send an enquiry</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><p class="brand">Savanna Trails</p><p>Responsible wildlife tourism in Kenya.</p></div>
+    <div><strong>Explore</strong><p><a href="#parks">Parks</a><br><a href="#wildlife">Wildlife guide</a><br><a href="#tours">Tours</a></p></div>
+    <div><strong>Contact</strong><p>[email@example.com]<br>[+254 000 000 000]<br>Nairobi, Kenya</p></div>
+  </div>
+</footer>
+
+<dialog id="book-dlg" aria-labelledby="book-title">
+  <form class="dlg" id="book-form">
+    <h2 id="book-title">Book this tour</h2>
+    <label>Full name <input name="name" required autocomplete="name"></label>
+    <label>Email <input type="email" name="email" required autocomplete="email"></label>
+    <div class="two">
+      <label>Travel date <input type="date" name="date" id="b-date" required></label>
+      <label>Guests <input type="number" name="guests" id="b-guests" min="1" max="20" value="2" required></label>
+    </div>
+    <div class="actions">
+      <button class="btn btn-orange" type="submit">Send booking request</button>
+      <button class="btn btn-outline" type="button" id="b-cancel">Cancel</button>
+    </div>
+  </form>
+  <div class="dlg" id="book-done" hidden>
+    <h2>Request sent</h2>
+    <p id="done-text"></p>
+    <div class="actions"><button class="btn btn-dark" type="button" id="b-close">Close</button></div>
+  </div>
+</dialog>
+
+<script src="js/main.js"></script>
+</body>
+</html>
