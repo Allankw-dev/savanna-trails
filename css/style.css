@@ -123,3 +123,37 @@ dialog::backdrop{background:rgba(11,24,18,.65)}
   .cta-box{padding:40px 24px}
 }
 @media (prefers-reduced-motion:reduce){.hero-video{display:none}html{scroll-behavior:auto}*{transition:none!important}}
+
+
+/* ---- design upgrades ---- */
+html{scroll-padding-top:84px}
+.kicker::before{content:"";display:inline-block;width:28px;height:2px;background:currentColor;vertical-align:middle;margin-right:10px}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:20;transition:background .25s,box-shadow .25s}
+.topbar.solid{background:rgba(16,35,26,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.25)}
+.topbar .nav{padding-top:16px;padding-bottom:16px}
+.hero-copy{padding-top:150px}
+.hero h1{text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.btn:hover{translate:0 -2px}
+
+.photo{height:240px;position:relative;transition:transform .6s ease}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.3))}
+.park:hover .photo{filter:none;transform:scale(1.06)}
+.park .meta::after{content:" \2192";display:inline-block;transition:translate .2s}
+.park:hover .meta::after{translate:4px 0}
+
+.animal{position:relative;overflow:hidden;min-height:340px;border:0;display:flex;flex-direction:column;justify-content:flex-end}
+.dot{position:absolute;inset:0;width:auto;height:auto;margin:0;border-radius:0;transition:transform .6s ease}
+.animal::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,24,18,0) 30%,rgba(11,24,18,.9))}
+.animal>*:not(.dot){position:relative;z-index:1}
+.animal:hover .dot{transform:scale(1.07)}
+
+.steps{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}
+.step .n{font:800 64px var(--display);color:var(--orange);line-height:1;margin-bottom:12px}
+.step h3{font-size:24px;margin-bottom:8px}
+.step p{margin:0;color:var(--muted)}
+
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease var(--d,0s),transform .7s ease var(--d,0s),translate .25s ease,box-shadow .25s ease}
+.js .reveal.in{opacity:1;transform:none}
+.park:hover,.tour:hover,.step:hover{translate:0 -6px;box-shadow:0 18px 40px rgba(16,35,26,.14)}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.photo,.dot{transition:none}}

@@ -72,3 +72,21 @@ form.addEventListener('submit', e => {
 });
 $('#b-cancel').addEventListener('click', () => dlg.close());
 $('#b-close').addEventListener('click', () => dlg.close());
+
+
+// sticky header turns solid after scrolling
+const topbar = $('#topbar');
+const onScroll = () => topbar.classList.toggle('solid', window.scrollY > 40);
+onScroll();
+addEventListener('scroll', onScroll, {passive: true});
+
+// fade-in on scroll (cards stagger within each grid)
+$$('.grid').forEach(g => [...g.children].forEach((el, i) => {
+  el.classList.add('reveal');
+  el.style.setProperty('--d', (i * 0.08) + 's');
+}));
+['.kicker', '.h2', '.intro', '.chips', '.cal-scroll', '.cta-box'].forEach(s => $$(s).forEach(el => el.classList.add('reveal')));
+const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries, obs) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, {threshold: 0.12}) : null;
+$$('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
