@@ -90,3 +90,8 @@ const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries,
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
 }, {threshold: 0.12}) : null;
 $$('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+
+
+// arriving from a park page (index.html?park=mara#tours) opens the tours filtered
+const startPark = new URLSearchParams(location.search).get('park');
+if (startPark && parkNames[startPark]) { park = startPark; applyFilters(); }

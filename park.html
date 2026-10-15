@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Park | Savanna Trails</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+<div class="topbar solid" id="topbar">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="logo" href="index.html">Savanna Trails</a>
+    <div class="menu" id="menu">
+      <a href="index.html#parks">Parks</a><a href="index.html#wildlife">Wildlife</a><a href="index.html#tours">Tours</a><a href="index.html#when">Best time</a><a href="index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn-orange" href="index.html#tours">Book a safari</a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+  </nav>
+</div>
+
+<header class="park-hero" id="park-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> / <a href="index.html#parks">Parks</a> / <span id="crumb"></span></p>
+    <h1 id="p-name"></h1>
+    <p class="lead" id="p-tagline"></p>
+    <div class="cta-actions">
+      <a class="btn btn-orange" id="p-tours" href="index.html#tours">See tours for this park</a>
+      <a class="btn btn-ghost" href="index.html#parks">All parks</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section wrap">
+    <div class="park-layout">
+      <div>
+        <p class="kicker">Overview</p>
+        <h2 class="h2" id="p-title"></h2>
+        <div id="p-about"></div>
+        <h3 class="sub">Animals you might see</h3>
+        <ul class="chiplist" id="p-wildlife"></ul>
+        <h3 class="sub">Good to know</h3>
+        <ul class="tips" id="p-tips"></ul>
+      </div>
+      <aside class="facts" aria-label="Quick facts">
+        <h3>Quick facts</h3>
+        <dl id="p-facts"></dl>
+        <a class="btn btn-orange" id="p-book" href="index.html#tours">Book a tour</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="kicker">Find it</p>
+    <h2 class="h2" style="margin-bottom:24px">Where it is</h2>
+    <div id="map" role="region" aria-label="Map of the park"></div>
+    <p class="fine">Map data from OpenStreetMap contributors. The marker shows the approximate centre of the park.</p>
+  </section>
+
+  <section class="section wrap">
+    <p class="kicker">Keep exploring</p>
+    <h2 class="h2" style="margin-bottom:32px">Other parks</h2>
+    <div class="grid parks" id="others"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><p class="brand">Savanna Trails</p><p>Friendly, responsible wildlife tours across Kenya.</p><p style="margin-top:10px">Photos and video: [add photographer credits]</p></div>
+    <div><strong>Explore</strong><p><a href="index.html#parks">Parks</a><br><a href="index.html#wildlife">Wildlife guide</a><br><a href="index.html#tours">Tours</a></p></div>
+    <div><strong>Contact</strong><p>[email@example.com]<br>[+254 000 000 000]<br>Nairobi, Kenya</p></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="js/park.js"></script>
+</body>
+</html>
