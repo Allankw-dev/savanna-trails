@@ -77,7 +77,10 @@ input,select{height:48px;border:1px solid #CFC5AE;border-radius:10px;padding:0 1
 .tour .when{margin:0;font-size:14px;font-weight:600;color:var(--rust)}
 .tour h3{font-size:26px}
 .tour p.desc{margin:0;color:var(--muted)}
-.tour p.price{margin:8px 0 0;font-weight:600}
+.tour p.price{margin:8px 0 0;font:800 30px var(--display);letter-spacing:-0.02em;line-height:1.1}
+.tour p.price small{display:block;margin-top:4px;font:500 14px var(--body);letter-spacing:0;color:var(--muted)}
+.tour p.incl{margin:0;font-size:14px;color:var(--muted)}
+.fine{margin:20px 0 0;font-size:14px;color:var(--muted);max-width:640px}
 .empty{padding:32px;border:2px dashed #CFC5AE;border-radius:20px;text-align:center;color:var(--muted)}
 
 /* calendar */

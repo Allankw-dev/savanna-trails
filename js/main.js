@@ -66,7 +66,7 @@ $$('.book').forEach(b => b.addEventListener('click', () => {
 form.addEventListener('submit', e => {
   e.preventDefault();
   const d = new FormData(form);
-  $('#done-text').textContent = 'Thanks ' + d.get('name') + '. We received your request for ' + tourName + ' on ' + d.get('date') + ' for ' + d.get('guests') + ' guest(s). We will email ' + d.get('email') + ' to confirm.';
+  $('#done-text').textContent = 'Asante sana, ' + d.get('name') + '! We received your request for ' + tourName + ' on ' + d.get('date') + ' for ' + d.get('guests') + ' guest(s). We will email ' + d.get('email') + ' to confirm.';
   form.hidden = true; $('#book-done').hidden = false;
   form.reset();
 });

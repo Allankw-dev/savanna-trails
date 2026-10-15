@@ -28,7 +28,7 @@
   <div class="wrap hero-copy">
     <p class="eyebrow">Kenya wildlife safaris</p>
     <h1>Sunrise belongs to the wild.</h1>
-    <p class="lead">Guided game drives, park stays and migration trips across Kenya's best reserves, planned around when the animals are there.</p>
+    <p class="lead">Hi, we're Savanna Trails. Tell us what you'd love to see and we'll plan a safari around when the animals are there, with a friendly local guide beside you all the way.</p>
   </div>
 </header>
 
@@ -54,7 +54,7 @@
   <section class="section wrap" id="parks">
     <p class="kicker">Destinations</p>
     <h2 class="h2">Four parks, four kinds of wild</h2>
-    <p class="intro">Each park has its own animals, landscape and best season. Pick one to see its tours.</p>
+    <p class="intro">Every park has its own personality. Tap one to see the tours that go there.</p>
     <div class="grid parks">
       <a class="park" href="#tours" data-park="mara">
         <div class="photo" role="img" aria-label="Maasai Mara plains" style="background:url(images/mara.jpg) center/cover,linear-gradient(160deg,#C98A3C,#7A4A1F)"></div>
@@ -102,23 +102,27 @@
     <div class="grid tours">
       <article class="tour" data-park="mara" data-type="multi" data-budget="no">
         <p class="when">4 days in Maasai Mara</p><h3>Migration Safari</h3>
-        <p class="desc">Game drives at dawn and dusk, with a river crossing watch.</p>
-        <p class="price">From [KES PRICE] per person</p>
+        <p class="desc">Come for the Great Migration. Dawn and dusk game drives, a day at the Mara River, and cosy nights in camp.</p>
+        <p class="price">From US$ 1,100<small>about KES 142,000 per person</small></p>
+        <p class="incl">Includes: 4x4 jeep, driver-guide, park fees, meals and camp stay</p>
         <button class="btn btn-orange book" data-tour="Migration Safari">Book this tour</button>
       </article>
       <article class="tour" data-park="amboseli" data-type="multi" data-budget="yes">
         <p class="when">2 days in Amboseli</p><h3>Elephants and Kilimanjaro</h3>
-        <p class="desc">A weekend of elephant herds with mountain views at sunrise.</p>
-        <p class="price">From [KES PRICE] per person</p>
+        <p class="desc">A relaxed weekend with elephant herds and Kilimanjaro at sunrise. Perfect if you only have a couple of days.</p>
+        <p class="price">From US$ 650<small>about KES 84,000 per person</small></p>
+        <p class="incl">Includes: safari van, driver-guide, park fees, lodge stay and meals</p>
         <button class="btn btn-orange book" data-tour="Elephants and Kilimanjaro">Book this tour</button>
       </article>
       <article class="tour" data-park="nakuru" data-type="day" data-budget="yes">
         <p class="when">1 day in Lake Nakuru</p><h3>Rift Valley Day Trip</h3>
-        <p class="desc">Flamingos, rhinos and a lakeside picnic, back by evening.</p>
-        <p class="price">From [KES PRICE] per person</p>
+        <p class="desc">Flamingos, rhinos and a lakeside lunch, and you're back in Nairobi for dinner.</p>
+        <p class="price">From US$ 190<small>about KES 24,500 per person</small></p>
+        <p class="incl">Includes: hotel pickup, driver-guide, park entry and lunch</p>
         <button class="btn btn-orange book" data-tour="Rift Valley Day Trip">Book this tour</button>
       </article>
     </div>
+    <p class="fine">Prices are per person sharing, in US dollars, with Kenyan shillings at about KES 129 per US$1. Rates shift with the season, so we'll confirm your exact price before you pay.</p>
     <div class="empty" id="empty" hidden>
       <p style="margin:0 0 12px"><strong>No tours match those filters yet.</strong></p>
       <p style="margin:0 0 16px">Try another filter, or tell us what you want and we'll plan it.</p>
@@ -144,7 +148,7 @@
 
   <section class="cta wrap" id="contact">
     <div class="cta-box">
-      <div><h2>Not sure where to start?</h2><p>Tell us your dates and budget and we'll plan the route for you.</p></div>
+      <div><h2>Not sure where to start?</h2><p>No stress. Tell us your dates and budget and we'll sketch a trip that fits.</p></div>
       <div class="cta-actions">
         <a class="btn btn-dark" href="https://wa.me/254000000000">Chat on WhatsApp</a>
         <a class="btn btn-outline" href="mailto:email@example.com">Send an enquiry</a>
@@ -155,7 +159,7 @@
 
 <footer>
   <div class="wrap foot">
-    <div><p class="brand">Savanna Trails</p><p>Responsible wildlife tourism in Kenya.</p><p style="margin-top:10px">Photos and video: [add photographer credits]</p></div>
+    <div><p class="brand">Savanna Trails</p><p>Friendly, responsible wildlife tours across Kenya.</p><p style="margin-top:10px">Photos and video: [add photographer credits]</p></div>
     <div><strong>Explore</strong><p><a href="#parks">Parks</a><br><a href="#wildlife">Wildlife guide</a><br><a href="#tours">Tours</a></p></div>
     <div><strong>Contact</strong><p>[email@example.com]<br>[+254 000 000 000]<br>Nairobi, Kenya</p></div>
   </div>
@@ -164,6 +168,7 @@
 <dialog id="book-dlg" aria-labelledby="book-title">
   <form class="dlg" id="book-form">
     <h2 id="book-title">Book this tour</h2>
+    <p>Great choice! Share a few details and we'll confirm by email.</p>
     <label>Full name <input name="name" required autocomplete="name"></label>
     <label>Email <input type="email" name="email" required autocomplete="email"></label>
     <div class="two">
