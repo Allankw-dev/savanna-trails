@@ -67,7 +67,7 @@ npm start       # or: npm run dev   (restarts on file changes)
 | Page | URL |
 | --- | --- |
 | Website | <http://localhost:3000> |
-| Admin dashboard | <http://localhost:3000/admin.html> |
+
 
 Log in with the `ADMIN_EMAIL` and `ADMIN_PASSWORD` from your `.env`. The seed script only creates data that does not exist yet, so it is safe to run again.
 
