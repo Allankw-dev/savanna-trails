@@ -64,10 +64,6 @@ npm run seed    # creates the tables, the parks, animals and tours, and the admi
 npm start       # or: npm run dev   (restarts on file changes)
 ```
 
-| Page | URL |
-| --- | --- |
-| Website | <http://localhost:3000> |
-
 
 Log in with the `ADMIN_EMAIL` and `ADMIN_PASSWORD` from your `.env`. The seed script only creates data that does not exist yet, so it is safe to run again.
 
