@@ -1,115 +1,102 @@
-# Savanna Trails
+# bank-program
+🏦 Bank Account Management System
 
-A friendly, responsive website for a Kenyan wildlife safari company. Visitors can explore the parks, meet the animals, compare tours with real-market prices, and send a booking request.
+A console-based bank account management system in Python that allows users to deposit, withdraw, view balance, and track transaction history. All account data is persistently stored in a JSON file.
 
-**Live site:** https://allankw-dev.github.io/savanna-trails/
+This version includes PIN authentication and improved input handling for PyCharm and other IDEs.
 
-<!-- Add a screenshot: save it as images/screenshot.png, then uncomment the next line -->
-<!-- ![Savanna Trails home page](images/screenshot.png) -->
+✨ Features
 
-## Features
+💰 Check Balance – Display your current account balance
 
-- **Video hero:** a looping wildlife video behind the headline, with a sunset-gradient fallback if the video is missing
-- **Trip planner:** pick a destination, date and group size, and the page jumps to the matching tours
-- **Parks:** Maasai Mara, Amboseli, Lake Nakuru and Samburu, each with its best season
-- **Wildlife guide:** four animals and where to spot them
-- **Tours with filters:** All, Day trips, Multi-day and Budget, plus an empty state when nothing matches
-- **Booking form:** a dialog that collects name, email, date and guests, then shows a confirmation
-- **Best time to visit:** a month-by-month chart of the Great Migration and dry seasons
-- **Responsive and accessible:** works on phones and desktops, with a mobile menu, keyboard focus styles and reduced-motion support
+🏦 Deposit Funds – Add money to your account
 
-## Tech stack
+💸 Withdraw Funds – Withdraw money with automatic balance check
 
-- HTML5, CSS3 and vanilla JavaScript (no frameworks, no build step)
-- Google Fonts: Bricolage Grotesque and Figtree
-- Hosted on GitHub Pages
+📜 Transaction History – View all transactions with type, amount, balance, and timestamp
 
-## Project structure
+🔐 PIN Authentication – Secure your account with a 4-digit PIN
 
-```
-savanna-trails/
-├── index.html        # page structure and content
-├── css/
-│   └── style.css     # all styles, using CSS variables
-├── js/
-│   └── main.js       # menu, filters, planner, booking dialog, hero video
-├── images/           # photos, hero video and poster
-└── README.md
-```
+📂 Persistent Storage – All data saved automatically in account.json
 
-## Run it locally
+🎨 User-Friendly Console Interface – Clear formatting, readable messages
 
-Clone the repo:
+🛡️ Input Validation – Accepts $ and comma-formatted numbers
 
-```bash
-git clone https://github.com/Allankw-dev/savanna-trails.git
-cd savanna-trails
-```
+⚡ Installation
+Prerequisites
 
-Then use either option.
+Python 3.6+ installed
 
-**Option 1:** open `index.html` in your browser.
+Optional: Git to clone the repository
 
-**Option 2:** serve it from a local server (needs Python or Node):
+Steps
 
-```bash
-python -m http.server 3000
-# or
-npx live-server --port=3000
-```
+Clone the repository or download the project:
 
-Open http://localhost:3000.
+git clone <repository-url>
 
-## Add your own media
 
-The site looks for these files in `images/`. Anything missing falls back to a colour or gradient, so nothing breaks.
+Navigate to the project folder:
 
-| File | Used for |
-|---|---|
-| `hero.mp4` | Looping background video (keep it under about 10 MB) |
-| `hero-poster.jpg` | Still frame shown while the video loads |
-| `mara.jpg`, `amboseli.jpg`, `nakuru.jpg`, `samburu.jpg` | Park cards |
-| `lion.jpg`, `elephant.jpg`, `cheetah.jpg`, `flamingo.jpg` | Wildlife guide |
+cd bank-account-program
 
-To compress a video with [ffmpeg](https://ffmpeg.org/):
 
-```bash
-ffmpeg -i input.mp4 -vf scale=1280:-2 -an -c:v libx264 -crf 28 -preset slow -movflags +faststart images/hero.mp4
-```
+Run the program:
 
-## Tour prices
+python bank_account.py
 
-Prices are in US dollars per person sharing, based on current Kenyan operator and booking-site rates, with Kenyan shillings at about KES 129 per US$1.
+📝 Usage
 
-| Tour | Price | Approx. in KES |
-|---|---|---|
-| Migration Safari (4 days, Maasai Mara) | From US$ 1,100 | 142,000 |
-| Elephants and Kilimanjaro (2 days, Amboseli) | From US$ 650 | 84,000 |
-| Rift Valley Day Trip (1 day, Lake Nakuru) | From US$ 190 | 24,500 |
+Set or enter your PIN at startup:
 
-To change a price, edit the `<p class="price">` line of that tour in `index.html`.
+If no PIN exists, you’ll be prompted to create one.
 
-## Limitations and future work
+Enter a 4-digit PIN to secure your account.
 
-This is a front-end project, so:
+Main menu options:
 
-- The booking form only shows a confirmation. Nothing is saved yet.
-- There are no user accounts and no payments.
-- Only the home page is built.
+1. Show balance
+2. Deposit
+3. Withdraw
+4. Transaction History
+5. Exit
 
-Planned next steps:
 
-- [ ] Park detail pages with maps (Leaflet)
-- [ ] Backend and database (users, parks, tours, bookings)
-- [ ] User login with tourist and admin roles
-- [ ] Admin dashboard to manage tours and bookings
-- [ ] M-Pesa and card payments
+Select the option by entering 1-5.
 
-## Credits
+For deposits and withdrawals, enter the amount when prompted.
 
-- Photos and video: add photographer names and sources here (for example Pexels or Unsplash)
-- Fonts: [Google Fonts](https://fonts.google.com/)
+Transactions are automatically saved to account.json.
 
-## Author
+Example
 
-Built by Allan ([@Allankw-dev](https://github.com/Allankw-dev)) as a university class project.
+Depositing $500:
+
+Enter amount to deposit: $500
+✓ Deposit successful! New balance: $500.00
+
+
+Viewing Transaction History:
+
+Transaction Type   Amount       Balance      Date & Time
+DEPOSIT            $500.00      $500.00      2026-02-15 15:42:10
+
+📁 File Structure
+bank_account.py      # Main program script
+account.json         # JSON file storing balance, transactions, and PIN
+README.md            # Project documentation
+
+🚀 Future Improvements
+
+🖥️ GUI Interface – Build a graphical version with Tkinter or PyQt
+
+📆 Interest & Fees – Add monthly interest or transaction fees
+
+🔍 Transaction Filters – Sort or filter transactions by type, date, or amount
+
+🔐 Advanced Security – Hash PINs for extra security
+
+📜 License
+
+This project is open-source and available under the MIT License.

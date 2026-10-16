@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Admin | Savanna Trails</title>
+</head>
+<body>
+<div class="topbar solid"><nav class="wrap nav"><a class="logo" href="index.html">Savanna Trails</a><div class="simple-links"><a href="index.html">View site</a><button class="link light" id="logout" hidden>Log out</button></div></nav></div>
+<main class="page-top wrap">
+
+  <div class="auth-card" id="login" hidden>
+    <h1>Admin login</h1>
+    <p class="muted">For the Savanna Trails team only.</p>
+    <form id="login-form" class="form-stack">
+      <label>Email <input id="l-email" type="email" required autocomplete="username"></label>
+      <label>Password <input id="l-pass" type="password" required autocomplete="current-password"></label>
+      <p class="form-err" id="l-err" role="alert" hidden></p>
+      <button class="btn btn-orange" type="submit">Log in</button>
+    </form>
+  </div>
+
+  <div id="app" hidden>
+    <p class="kicker">Admin</p>
+    <h1 class="h2" style="margin-bottom:24px">Dashboard</h1>
+    <p class="flash" id="flash" role="status" hidden></p>
+    <div class="stats" id="stats"></div>
+
+    <h2 class="sec-h">Bookings</h2>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th>Reference</th><th>Customer</th><th>Tour</th><th>Date</th><th>Guests</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
+      <tbody id="bk-body"></tbody>
+    </table></div>
+    <p class="muted" id="bk-empty" hidden>No bookings yet.</p>
+
+    <div class="sec-row"><h2 class="sec-h">Tours</h2><button class="btn btn-dark" id="add-tour" type="button">Add a tour</button></div>
+    <div class="tbl-wrap"><table class="tbl">
+      <thead><tr><th>Title</th><th>Park</th><th>Days</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody id="t-body"></tbody>
+    </table></div>
+  </div>
+</main>
+
+<dialog id="tour-dlg" aria-labelledby="t-title-h">
+  <form class="dlg" id="tour-form">
+    <h2 id="t-title-h">Add a tour</h2>
+    <input type="hidden" id="t-id">
+    <label>Park <select id="t-park"></select></label>
+    <label>Title <input id="t-name" required minlength="3"></label>
+    <label>Description <textarea id="t-desc" rows="3"></textarea></label>
+    <label>What is included <input id="t-inc" placeholder="4x4 jeep, meals, park fees"></label>
+    <div class="two">
+      <label>Days <input id="t-days" type="number" min="1" max="30" value="1" required></label>
+      <label>Price per person (US$) <input id="t-price" type="number" min="0" step="1" required></label>
+    </div>
+    <label class="radio"><input type="checkbox" id="t-budget"> Show under the Budget filter</label>
+    <label class="radio"><input type="checkbox" id="t-active" checked> Active (visible on the website)</label>
+    <p class="form-err" id="t-err" role="alert" hidden></p>
+    <div class="actions"><button class="btn btn-orange" type="submit">Save tour</button><button class="btn btn-outline" type="button" id="t-cancel">Cancel</button></div>
+  </form>
+</dialog>
+
+<dialog id="pay-dlg" aria-labelledby="pay-title">
+  <form class="dlg" id="pay-form">
+    <h2 id="pay-title">Record a payment</h2>
+    <p id="pay-for"></p>
+    <label>How did they pay?
+      <select id="pay-method"><option value="mpesa">M-Pesa</option><option value="card">Card</option><option value="bank">Bank transfer</option></select>
+    </label>
+    <label>Payment reference <input id="pay-ref" required minlength="4" placeholder="For example the M-Pesa code"></label>
+    <p class="form-err" id="pay-err" role="alert" hidden></p>
+    <div class="actions"><button class="btn btn-orange" type="submit">Save payment</button><button class="btn btn-outline" type="button" id="pay-cancel">Cancel</button></div>
+  </form>
+</dialog>
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

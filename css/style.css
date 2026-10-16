@@ -181,3 +181,51 @@ html{scroll-padding-top:84px}
 .facts .btn{display:block}
 #map{position:relative;z-index:0;height:400px;border-radius:20px;border:1px solid var(--line);background:var(--sand)}
 @media (max-width:860px){.park-layout{grid-template-columns:1fr}.facts{position:static}}
+
+/* ---- accounts, bookings and admin ---- */
+.page-top{padding-top:130px;padding-bottom:40px;min-height:70vh}
+.simple-links{display:flex;align-items:center;gap:20px;font-weight:500;font-size:15px;color:#fff}
+.muted{color:var(--muted)}
+.link{background:none;border:0;padding:0;font:inherit;color:var(--rust);font-weight:600;cursor:pointer;text-decoration:underline}
+.link.light{color:#fff;text-decoration:none}
+.link.danger{color:#A12A2A}
+.form-err{margin:0;padding:10px 14px;border-radius:10px;background:#F6DEDE;color:#7A2020;font-size:15px}
+.form-stack{display:grid;gap:16px}
+.auth-card{max-width:440px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px}
+.auth-card h1{font-size:32px;margin:20px 0 6px}
+.auth-card .muted{margin:0 0 24px}
+.tabs{display:flex;gap:6px;background:var(--sand);padding:5px;border-radius:999px}
+.tab{flex:1;height:42px;border:0;border-radius:999px;background:transparent;font:600 15px var(--body);cursor:pointer}
+.tab[aria-selected="true"]{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.radio{flex-direction:row;align-items:center;gap:10px;font-weight:500;color:var(--ink)}
+.radio input{width:20px;height:20px}
+textarea{border:1px solid #CFC5AE;border-radius:10px;padding:10px 12px;font:16px var(--body);width:100%;resize:vertical}
+.bk-list{display:grid;gap:16px}
+.bk{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.bk h3{font-size:24px;margin-bottom:4px}
+.bk-meta{margin:0 0 8px;color:var(--muted)}
+.bk-total{margin:0;font-weight:600}
+.bk-total small{font-weight:400;color:var(--muted)}
+.bk-side{display:flex;flex-wrap:wrap;gap:10px;align-items:center;align-content:flex-start}
+.bk-side .btn{padding:10px 20px}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;text-transform:capitalize;background:#EDE6D5;color:var(--muted)}
+.pill.pending{background:#FFF1D6;color:#8A5A00}
+.pill.confirmed,.pill.paid{background:#DDF1E0;color:#1F6B3A}
+.pill.cancelled{background:#F6DEDE;color:#8A2A2A}
+.pill.completed{background:#E3E8F4;color:#2F4A8A}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:40px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.stat b{display:block;font:800 30px var(--display);letter-spacing:-0.02em}
+.stat span{font-size:14px;color:var(--muted)}
+.sec-h{font-size:26px;margin:40px 0 16px}
+.sec-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.sec-row .sec-h{margin:40px 0 16px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#fff}
+.tbl{width:100%;border-collapse:collapse;font-size:15px;min-width:720px}
+.tbl th,.tbl td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{background:var(--sand);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.tbl tr:last-child td{border-bottom:0}
+.tbl small{color:var(--muted)}
+.tbl select{height:38px;width:auto;padding:0 8px}
+.flash{padding:12px 16px;border-radius:12px;background:#DDF1E0;color:#1F6B3A;font-weight:600;margin:0 0 20px}
+.flash.bad{background:#F6DEDE;color:#7A2020}
