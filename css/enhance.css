@@ -1,0 +1,107 @@
+/* Savanna Trails design upgrade. Loads after style.css and only adds or overrides. */
+
+:root{
+  /* acacia horizon, drawn in the same dark green as the page ground so it melts into it */
+  --horizon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200' preserveAspectRatio='xMidYMax slice'%3E%3Cdefs%3E%3Cg id='a'%3E%3Cpath d='M-5 0C-2-40-8-70-16-92L-2-92C4-70 8-40 8 0Z'/%3E%3Cpath d='M-8-62C-40-78-70-84-88-90L-84-84C-60-76-34-68-4-52Z'/%3E%3Cellipse cx='0' cy='-96' rx='96' ry='13'/%3E%3Cellipse cx='-48' cy='-84' rx='52' ry='10'/%3E%3Cellipse cx='54' cy='-86' rx='48' ry='9'/%3E%3C/g%3E%3C/defs%3E%3Cg fill='%230B1812'%3E%3Cuse href='%23a' transform='translate(210 150) scale(.8)'/%3E%3Cuse href='%23a' transform='translate(1010 146) scale(1.15)'/%3E%3Cuse href='%23a' transform='translate(1290 152) scale(.55)'/%3E%3Cpath d='M0 200V156C200 140 400 164 640 152S1100 142 1440 156V200Z'/%3E%3C/g%3E%3C/svg%3E");
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- type ---------- */
+.h2,.hero h1,.cta-box h2{text-wrap:balance}
+.intro,.tour p.desc,.step p{text-wrap:pretty}
+.hero h1{font-size:clamp(48px,9vw,118px);line-height:.94;letter-spacing:-0.04em;max-width:900px}
+.hero-copy p.lead{font-size:clamp(18px,2vw,21px);max-width:540px}
+
+/* ---------- nav ---------- */
+.logo{display:inline-flex;align-items:center;gap:10px}
+.logo::before{content:"";width:14px;height:14px;border-radius:50%;background:radial-gradient(circle,#FFE3A8,#F2B55E 60%,#E2701F);box-shadow:0 0 18px 4px rgba(242,181,94,.55)}
+.menu a{position:relative;padding-block:6px}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.menu a:hover{opacity:1}
+.menu a:hover::after{transform:scaleX(1)}
+
+/* ---------- buttons ---------- */
+.btn-orange{background:linear-gradient(180deg,#F59447,#E2701F);box-shadow:0 10px 24px -10px rgba(226,112,31,.9)}
+.btn-dark{box-shadow:0 10px 24px -12px rgba(11,24,18,.8)}
+.btn:hover{opacity:1;translate:0 -2px}
+
+/* ---------- hero: the one memorable moment ---------- */
+.hero{padding-bottom:200px}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:clamp(120px,17vw,230px);z-index:1;pointer-events:none;
+  background:var(--horizon) center bottom/auto 100% repeat-x}
+.sun{bottom:60px;right:14%;width:300px;height:300px}
+.hero-video{scale:1.1}
+
+@media (prefers-reduced-motion:no-preference){
+  /* page load: the sun climbs, then the words arrive */
+  .sun{animation:sunrise 2.6s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy>*{animation:arrive .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy>:nth-child(1){animation-delay:.25s}
+  .hero-copy>:nth-child(2){animation-delay:.4s}
+  .hero-copy>:nth-child(3){animation-delay:.6s}
+}
+@keyframes sunrise{from{translate:0 210px;opacity:.2}}
+@keyframes arrive{from{opacity:0;translate:0 26px}}
+
+/* ---------- planner ---------- */
+.planner form{border-radius:24px;border:1px solid rgba(255,255,255,.5);position:relative;z-index:2}
+.planner form:focus-within{box-shadow:0 24px 60px rgba(226,112,31,.28),0 20px 50px rgba(0,0,0,.35)}
+
+/* ---------- cards ---------- */
+.park,.tour,.step{border-radius:24px;box-shadow:0 1px 0 rgba(16,35,26,.04),0 14px 34px -22px rgba(16,35,26,.45)}
+.park:hover,.tour:hover,.step:hover{box-shadow:0 26px 50px -24px rgba(16,35,26,.55)}
+.park .meta{display:inline-block;padding:6px 12px;border-radius:999px;background:#FBEBD7;font-size:14px}
+
+/* wildlife: warm grain on the dark band */
+.wildlife{background-image:var(--grain)}
+.animal{border-radius:24px}
+.animal h3{font-size:30px}
+
+/* tours: a ticket-style tear line above the price */
+.tour p.price{border-top:2px dashed #D9CCAE;padding-top:18px;color:var(--rust)}
+.tour .when{display:inline-block;align-self:flex-start;padding:5px 12px;border-radius:999px;background:var(--sand)}
+.chip{transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--forest)}
+
+/* best time: rounded, glowing bars */
+.bar{height:32px;border-radius:999px}
+.bar.mig{background:linear-gradient(90deg,#F2B55E,#E2701F);box-shadow:0 8px 20px -8px rgba(226,112,31,.9)}
+.bar.dry{background:linear-gradient(90deg,#7E9C7F,#5B7A5E)}
+
+/* how it works: a real sequence, so the numbers stay, drawn as outlines */
+.step{overflow:hidden}
+.step .n{font-size:92px;color:transparent;-webkit-text-stroke:2px var(--orange);transition:color .3s}
+.step:hover .n{color:var(--orange)}
+
+/* ---------- call to action ---------- */
+.cta-box{position:relative;overflow:hidden;border-radius:32px;padding:64px 48px;
+  background:radial-gradient(circle at 88% 130%,#FFE3A8 0,rgba(255,227,168,0) 55%),var(--grain),var(--orange)}
+.cta-box::after{content:"";position:absolute;left:0;right:0;bottom:0;height:110px;opacity:.16;pointer-events:none;
+  background:var(--horizon) right bottom/auto 100% no-repeat}
+.cta-box>*{position:relative;z-index:1}
+
+/* ---------- footer: the acacias rise out of it ---------- */
+footer{position:relative}
+footer::before{content:"";position:absolute;left:0;right:0;bottom:calc(100% - 1px);height:clamp(70px,10vw,120px);pointer-events:none;
+  background:var(--horizon) center bottom/auto 100% repeat-x}
+
+/* ---------- scroll-driven touches (browsers that support them) ---------- */
+.topbar::after{display:none}
+@supports (animation-timeline:scroll()){
+  @media (prefers-reduced-motion:no-preference){
+    .topbar::after{display:block;content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;
+      background:linear-gradient(90deg,var(--gold),var(--orange));transform-origin:0 50%;
+      animation:progress linear both;animation-timeline:scroll(root block)}
+    .hero-video{animation:drift linear both;animation-timeline:scroll(root block);animation-range:0 90vh}
+  }
+}
+@keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes drift{to{translate:0 5vh}}
+
+/* ---------- small screens ---------- */
+@media (max-width:760px){
+  .hero{padding-bottom:150px}
+  .sun{right:-60px;width:220px;height:220px}
+  .cta-box{padding:44px 24px}
+  .step .n{font-size:72px}
+}
