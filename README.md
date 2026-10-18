@@ -24,7 +24,7 @@ A full-stack website for a Kenyan wildlife safari company. Visitors explore four
 - Dashboard with total bookings, pending bookings, unpaid bookings, revenue and active tours
 - Booking management: move bookings between pending, confirmed, completed and cancelled
 - Payment recording: log an M-Pesa, card or bank payment reference once the money arrives. The booking is marked paid and a pending booking becomes confirmed
-- Tour management: add, edit and remove tours. A tour that already has bookings is archived instead of deleted, so booking history stays intact.
+- Tour management: add, edit and remove tours. A tour that already has bookings is archived instead of deleted, so booking history stays intact..
 
 ## Tech stack
 
