@@ -26,7 +26,7 @@ A full-stack website for a Kenyan wildlife safari company. Visitors explore four
 - Payment recording: log an M-Pesa, card or bank payment reference once the money arrives. The booking is marked paid and a pending booking becomes confirmed
 - Tour management: add, edit and remove tours. A tour that already has bookings is archived instead of deleted, so booking history stays intact..
 
-## Tech stack
+## Tech stack.
 
 | Layer | Technology |
 | --- | --- |
