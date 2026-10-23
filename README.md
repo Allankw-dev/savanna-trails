@@ -1,4 +1,4 @@
-# Savanna Trails...
+# Savanna Trails..
 
 A full-stack website for a Kenyan wildlife safari company. Visitors explore four national parks, compare tours, plan a trip and book as a guest. The owner manages bookings, payments and tours from a private admin dashboard.
 
