@@ -20,7 +20,6 @@ h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-0.02em}
 
 /* hero */
 .hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(180deg,#2A1F2D 0%,#6E3329 45%,#E2701F 80%,#F2B55E 100%);padding-bottom:170px}
-.sun{position:absolute;right:10%;bottom:-110px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFE3A8 0%,#F7B955 55%,rgba(247,185,85,0) 72%)}
 .nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;padding-bottom:24px}
 .logo{font:800 24px var(--display);letter-spacing:-0.02em}
 .menu{display:flex;gap:28px;font-weight:500;font-size:15px}
@@ -33,7 +32,6 @@ h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-0.02em}
 
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero.has-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,24,18,.6) 0%,rgba(11,24,18,.3) 50%,rgba(11,24,18,.75) 100%)}
-.hero.has-video .sun{display:none}
 
 /* planner */
 .ground{background:var(--deep);padding:0 0 40px}
@@ -119,7 +117,6 @@ dialog::backdrop{background:rgba(11,24,18,.65)}
   .menu.open{display:flex}
   .menu a{padding:12px}
   .nav .btn{display:none}
-  .sun{right:-40px}
   .cta-box{padding:40px 24px}
 }
 @media (prefers-reduced-motion:reduce){.hero-video{display:none}html{scroll-behavior:auto}*{transition:none!important}}
