@@ -139,3 +139,72 @@ const startPark = new URLSearchParams(location.search).get('park');
 if (startPark && parkNames[startPark]) { park = startPark; applyFilters(); }
 
 loadTours();
+
+
+// ---------- safari tip button: shows an alert when clicked ----------
+const TIPS = [
+  'Book dawn and dusk game drives, when the animals are most active.',
+  'Bring binoculars and a camera with a good zoom.',
+  'Wear neutral colours like khaki and green instead of bright white.',
+  'Pack a light jacket, because mornings on the plains are cool.',
+  'Stay inside the vehicle unless your guide says it is safe.',
+  'Carry sunscreen, a hat and plenty of drinking water.'
+];
+function showTip() {
+  const tip = TIPS[Math.floor(Math.random() * TIPS.length)];
+  alert('Safari tip: ' + tip);
+}
+$('#tip-btn').addEventListener('click', showTip);
+
+// ---------- contact form: validation and a message after submitting ----------
+const contactForm = $('#contact-form');
+const fields = { name: '#c-name', email: '#c-email', phone: '#c-phone', msg: '#c-msg' };
+
+function validateContact() {
+  const v = {
+    name: $('#c-name').value.trim(), email: $('#c-email').value.trim(),
+    phone: $('#c-phone').value.trim(), msg: $('#c-msg').value.trim()
+  };
+  const errors = {};
+  if (v.name.length < 2) errors.name = 'Please enter your full name (at least 2 letters).';
+  if (!/^\S+@\S+\.\S+$/.test(v.email)) errors.email = 'Enter a valid email, for example name@example.com.';
+  if (v.phone && !/^\+?[0-9\s-]{7,16}$/.test(v.phone)) errors.phone = 'Enter a valid phone number, for example 0712 345 678.';
+  if (v.msg.length < 10) errors.msg = 'Please write at least 10 characters so we can help you.';
+  return { v, errors };
+}
+
+function clearErrors() {
+  Object.keys(fields).forEach(k => {
+    $('#c-' + (k === 'msg' ? 'msg' : k) + '-err').textContent = '';
+    $(fields[k]).removeAttribute('aria-invalid');
+  });
+}
+
+contactForm.addEventListener('submit', e => {
+  e.preventDefault();
+  clearErrors();
+  const status = $('#c-status');
+  const { v, errors } = validateContact();
+  const keys = Object.keys(errors);
+  if (keys.length) {
+    keys.forEach(k => {
+      $('#c-' + k + '-err').textContent = errors[k];
+      $(fields[k]).setAttribute('aria-invalid', 'true');
+    });
+    $(fields[keys[0]]).focus();
+    status.textContent = 'Please fix the highlighted fields and try again.';
+    status.className = 'form-msg bad';
+    status.hidden = false;
+    return;
+  }
+  status.textContent = 'Thank you, ' + v.name.split(' ')[0] + '! Your message has been received. We will reply to ' + v.email + ' soon.';
+  status.className = 'form-msg ok';
+  status.hidden = false;
+  contactForm.reset();
+});
+
+// clear a field's error as soon as the person starts fixing it
+Object.keys(fields).forEach(k => $(fields[k]).addEventListener('input', () => {
+  $('#c-' + k + '-err').textContent = '';
+  $(fields[k]).removeAttribute('aria-invalid');
+}));

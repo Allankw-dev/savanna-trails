@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/enhance.css">
 </head>
 <body id="top">
 
@@ -21,9 +20,9 @@
   <div class="sun" aria-hidden="true"></div>
   <div class="topbar" id="topbar">
   <nav class="wrap nav" aria-label="Main">
-    <a class="logo" href="#top">Savanna Trails</a>
+    <a class="logo" href="#top"><img src="images/logo.svg" alt="" width="36" height="36">Savanna Trails</a>
     <div class="menu" id="menu">
-      <a href="#parks">Parks</a><a href="#wildlife">Wildlife</a><a href="#tours">Tours</a><a href="#when">Best time</a><a href="#how">How it works</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#parks">Parks</a><a href="#wildlife">Wildlife</a><a href="#tours">Tours</a><a href="#when">Best time</a><a href="#contact">Contact</a>
     </div>
     <a class="btn btn-orange" href="#tours">Book a safari</a>
     <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
@@ -55,6 +54,19 @@
 </div>
 
 <main>
+  <section class="section wrap" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="kicker">About us</p>
+        <h2 class="h2">Local guides, unforgettable safaris</h2>
+        <p>Savanna Trails is a Kenyan safari company that plans wildlife trips to four of the country's best parks: Maasai Mara, Amboseli, Lake Nakuru and Samburu.</p>
+        <p>Our guides grew up near these parks. They know where the animals are, when to go, and how to keep you safe and comfortable on every game drive.</p>
+        <button type="button" class="btn btn-dark" id="tip-btn">Get a safari tip</button>
+      </div>
+      <img src="images/mara.jpg" alt="Open grassland in the Maasai Mara at sunrise" width="640" height="480" loading="lazy">
+    </div>
+  </section>
+
   <section class="section wrap" id="parks">
     <p class="kicker">Destinations</p>
     <h2 class="h2">Four parks, four kinds of wild</h2>
@@ -134,6 +146,24 @@
     </div>
   </section>
 
+  <section class="section wrap" id="compare">
+    <p class="kicker">Compare</p>
+    <h2 class="h2" style="margin-bottom:16px">Our safaris at a glance</h2>
+    <p class="intro" style="margin-bottom:28px">A quick look at what each tour offers. Prices are per person sharing.</p>
+    <div class="tbl-wrap">
+      <table class="tbl compare-tbl">
+        <caption>Savanna Trails tours compared</caption>
+        <thead><tr><th scope="col">Tour</th><th scope="col">Park</th><th scope="col">Duration</th><th scope="col">Price (US$)</th><th scope="col">Best time</th></tr></thead>
+        <tbody>
+          <tr><td>Migration Safari</td><td>Maasai Mara</td><td>4 days</td><td>From 1,100</td><td>July to October</td></tr>
+          <tr><td>Elephants and Kilimanjaro</td><td>Amboseli</td><td>2 days</td><td>From 650</td><td>June to October</td></tr>
+          <tr><td>Rift Valley Day Trip</td><td>Lake Nakuru</td><td>1 day</td><td>From 190</td><td>All year</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Want to learn more about Kenya's national parks? Visit the official <a class="ext" href="https://www.kws.go.ke" target="_blank" rel="noopener noreferrer">Kenya Wildlife Service website</a>.</p>
+  </section>
+
   <section class="section wrap" id="when">
     <p class="kicker">Best time to visit</p>
     <h2 class="h2" style="margin-bottom:32px">When to go</h2>
@@ -160,13 +190,51 @@
     </div>
   </section>
 
-  <section class="cta wrap" id="contact">
+  <section class="cta wrap" id="help">
     <div class="cta-box">
       <div><h2>Not sure where to start?</h2><p>No stress. Tell us your dates and budget and we'll sketch a trip that fits.</p></div>
       <div class="cta-actions">
         <a class="btn btn-dark" href="https://wa.me/254000000000">Chat on WhatsApp</a>
-        <a class="btn btn-outline" href="mailto:email@example.com">Send an enquiry</a>
+        <a class="btn btn-outline" href="#contact">Send an enquiry</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="contact">
+    <p class="kicker">Contact us</p>
+    <h2 class="h2" style="margin-bottom:12px">Plan your safari with us</h2>
+    <p class="intro">Send us a message and we will help you pick the right trip.</p>
+    <div class="contact-grid">
+      <form id="contact-form" class="form-stack" novalidate>
+        <label>Full name
+          <input id="c-name" name="name" autocomplete="name">
+          <small class="field-err" id="c-name-err" role="alert"></small>
+        </label>
+        <label>Email
+          <input id="c-email" name="email" type="email" autocomplete="email">
+          <small class="field-err" id="c-email-err" role="alert"></small>
+        </label>
+        <label>Phone number (optional)
+          <input id="c-phone" name="phone" type="tel" autocomplete="tel" placeholder="0712 345 678">
+          <small class="field-err" id="c-phone-err" role="alert"></small>
+        </label>
+        <label>Which park interests you?
+          <select id="c-park" name="park"><option value="">Not sure yet</option><option>Maasai Mara</option><option>Amboseli</option><option>Lake Nakuru</option><option>Samburu</option></select>
+        </label>
+        <label>Message
+          <textarea id="c-msg" name="message" rows="4" placeholder="Tell us your dates, group size and what you would like to see."></textarea>
+          <small class="field-err" id="c-msg-err" role="alert"></small>
+        </label>
+        <p class="form-msg" id="c-status" role="status" hidden></p>
+        <button class="btn btn-orange" type="submit">Send message</button>
+      </form>
+      <aside class="contact-info" aria-label="Contact details">
+        <h3>Find us</h3>
+        <p><strong>Email</strong><br>info@savannatrails.example</p>
+        <p><strong>Phone</strong><br>+254 700 000 000</p>
+        <p><strong>Office</strong><br>Nairobi, Kenya</p>
+        <p><strong>Hours</strong><br>Monday to Saturday, 8am to 6pm</p>
+      </aside>
     </div>
   </section>
 </main>
@@ -175,7 +243,7 @@
   <div class="wrap foot">
     <div><p class="brand">Savanna Trails</p><p>Friendly, responsible wildlife tours across Kenya.</p><p style="margin-top:10px">Photos and video: [add photographer credits]</p></div>
     <div><strong>Explore</strong><p><a href="#parks">Parks</a><br><a href="#wildlife">Wildlife guide</a><br><a href="#tours">Tours</a></p></div>
-    <div><strong>Contact</strong><p>[email@example.com]<br>[+254 000 000 000]<br>Nairobi, Kenya</p></div>
+    <div><strong>Contact</strong><p>info@savannatrails.example<br>+254 700 000 000<br>Nairobi, Kenya</p></div>
   </div>
 </footer>
 

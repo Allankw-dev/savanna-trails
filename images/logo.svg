@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Savanna Trails logo">
+  <circle cx="32" cy="32" r="30" fill="#E2701F"/>
+  <circle cx="41" cy="25" r="8" fill="#FFE3A8"/>
+  <path d="M4.5 44 C20 39 44 39 59.5 44 A30 30 0 0 1 4.5 44 Z" fill="#10231A"/>
+  <rect x="23.8" y="30" width="2.6" height="15" fill="#10231A"/>
+  <ellipse cx="25" cy="29" rx="12" ry="4" fill="#10231A"/>
+</svg>
