@@ -6,7 +6,7 @@ A full-stack website for a Kenyan wildlife safari company. Visitors explore four
 
 > GitHub Pages cannot run a server, so the live demo runs in **demo mode**: the tours you see are static and booking requests are not saved. Run the project locally (see [Getting started](#getting-started)) for the full version with the database and admin dashboard.
 
-## Features
+## Features.
 
 **For visitors**
 
