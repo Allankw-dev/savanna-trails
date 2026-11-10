@@ -6,6 +6,14 @@ A full-stack website for a Kenyan wildlife safari company. Visitors explore four
 
 > GitHub Pages cannot run a server, so the live demo runs in **demo mode**: the tours you see are static and booking requests are not saved. Run the project locally (see [Getting started](#getting-started)) for the full version with the database and admin dashboard.
 
+## Screenshots and walkthrough
+
+| Desktop | Mobile |
+|---|---|
+| ![Savanna Trails desktop parks section](screenshots/desktop.jpg) | ![Savanna Trails mobile parks section](screenshots/mobile.jpg) |
+
+[Watch the public site walkthrough (MP4)](media/walkthrough.mp4)
+
 ## Features.
 
 **For visitors**
