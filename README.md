@@ -72,6 +72,7 @@ npm run seed    # creates the tables, the parks, animals and tours, and the admi
 npm start       # or: npm run dev   (restarts on file changes)
 ```
 
+Open <http://localhost:3000> in your browser. If port 3000 is already in use, change `PORT` in `.env` (for example, to `3002`), restart the server, and open <http://localhost:3002> instead.
 
 Log in with the `ADMIN_EMAIL` and `ADMIN_PASSWORD` from your `.env`. The seed script only creates data that does not exist yet, so it is safe to run again.
 
